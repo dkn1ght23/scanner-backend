@@ -1,19 +1,33 @@
 # Backend Setup Guide
 
-This is the backend setup for the project using Node.js, Express.js, ZAP, and the Gemini API. Follow the steps below to get the server up and running.
+## Project Overview
+Node.js/Express backend with OWASP ZAP security scanning and Gemini AI integration.
 
 ## Prerequisites
 
-1. **Node.js**: Make sure Node.js is installed on your machine. You can download it from [here](https://nodejs.org/).
-   
-2. **ZAP (OWASP Zed Attack Proxy)**: You need to have ZAP installed for security testing. Download and install it from [here](https://www.zaproxy.org/download/).
+- [Node.js](https://nodejs.org/) (v18+ recommended)
+- [npm](https://www.npmjs.com/) (v9+)
+- Java Runtime Environment (JRE 11+)
+- [OWASP ZAP](https://www.zaproxy.org/download/) (v2.14+)
+- Gemini API key (from Google AI Studio)
+- ZAP API key (auto-generated on first run)
 
-3. **Gemini API Key**: You must have the Gemini API key for the integration to work. Obtain your API key from [Gemini](https://www.gemini.com/).
+## Installation
 
-## Setup Instructions
+### 1. Clone the Repository
 
-### 1. Clone the repository
+First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
-cd your-repository
+git clone <repository_url>
+cd <repository_name>
+```
+
+### 2. Install The dependancy
+
+```bash
+npm install
+# or if using yarn
+yarn install
+```
+
