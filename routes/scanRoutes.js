@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const zapAxios = require("../config/zapAxios");
 const { checkZapStatus, waitForScanCompletion } = require("../utils/zapUtils");
-require("dotenv").config();
 
 router.post("/scan", async (req, res) => {
   const { targetUrl } = req.body;

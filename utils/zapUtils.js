@@ -5,7 +5,7 @@ async function checkZapStatus() {
   try {
     const response = await zapAxios.get("/JSON/core/view/version", {
       params: {
-        apikey: "t3tgnnoanmg1je2o1pcr8a2au5", // Ensure API key is passed
+        apikey: process.env.ZAP_API_KEY,
       },
     });
 

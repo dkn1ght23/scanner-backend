@@ -8,7 +8,7 @@ const zapAxios = axios.create({
     Accept: "application/json",
   },
   params: {
-    apikey: "t3tgnnoanmg1je2o1pcr8a2au5", // Always include the API key
+    apikey: process.env.ZAP_API_KEY,
   },
 });
 

@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+require("dotenv").config();
+
 const scanRoutes = require("./routes/scanRoutes");
 const zapRoutes = require("./routes/zapRoutes");
 const fixRoutes = require("./routes/fixRoutes");
