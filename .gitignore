@@ -8,13 +8,13 @@
 # testing
 /coverage
 
-# production
+# productiongit
 /build
 
 # misc
+.env
 .DS_Store
 .env.local
-.env
 .env.development.local
 .env.test.local
 .env.production.local
