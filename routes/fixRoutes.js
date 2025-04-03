@@ -37,8 +37,6 @@ router.post("/fix-error", async (req, res) => {
     const result = await chat.sendMessage(prompt);
     const fixSuggestion = result.response.text();
 
-    console.log(fixSuggestion, "fixSuggestion");
-
     res.json({
       fix: fixSuggestion,
     });
