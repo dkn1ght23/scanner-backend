@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 const zapAxios = axios.create({
-  baseURL: "http://localhost:8080",
+  baseURL: process.env.ZAP_API_URL,
   timeout: 60000,
   headers: {
     "Content-Type": "application/json",

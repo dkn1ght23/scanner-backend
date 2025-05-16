@@ -1,0 +1,38 @@
+services:
+  zap:
+    image: ghcr.io/zaproxy/zaproxy:stable
+    container_name: zap
+    ports:
+      - "8080:8080"
+      - "8090:8090"
+    environment:
+      ZAP_JVM_OPTIONS: "-Xmx4G"
+      ZAP_API_KEY: "t3tgnnoanmg1je2o1pcr8a2au5"  # Replace with your key
+    volumes:
+      - zap-data:/home/zap/.ZAP
+    command: [
+      "zap.sh",
+      "-daemon",
+      "-host", "0.0.0.0",
+      "-port", "8080",
+      "-config", "api.key=t3tgnnoanmg1je2o1pcr8a2au5",
+      "-config", "api.addrs.addr.name=.*",
+      "-config", "api.addrs.addr.regex=true",
+      "-config", "database.recoverylog=true"
+    ]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/JSON/core/view/version?apikey=t3tgnnoanmg1je2o1pcr8a2au5"]
+
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      ZAP_API_URL: "http://zap:8080"
+      ZAP_API_KEY: "t3tgnnoanmg1je2o1pcr8a2au5"
+    depends_on:
+      zap:
+        condition: service_healthy
+
+volumes:
+  zap-data:
