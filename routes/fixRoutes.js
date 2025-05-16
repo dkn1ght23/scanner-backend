@@ -5,6 +5,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 // Initialize Gemini AI with API Key
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 router.post("/fix-error", async (req, res) => {
+  console.log("asdasd");
   try {
     // Validate request body
     if (!req.body || !req.body.alert) {
