@@ -11,5 +11,5 @@ RUN npm install
 # Copy all other files
 COPY . .
 
-# Explicitly set the command (without JSON array syntax)
-CMD node server.js
+# Use the npm script to start
+CMD ["npm", "start"]

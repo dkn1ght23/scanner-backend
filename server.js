@@ -6,6 +6,7 @@ require("dotenv").config();
 const scanRoutes = require("./routes/scanRoutes");
 const fixRoutes = require("./routes/fixRoutes");
 const rateRoutes = require("./routes/rateRoutes");
+const pdfRoutes = require("./routes/pdfRoute");
 
 const app = express();
 app.use(cors({ origin: "*" }));
@@ -28,6 +29,7 @@ app.use(limiter);
 app.use("/api", scanRoutes);
 app.use("/api", fixRoutes);
 app.use("/api", rateRoutes);
+app.use("/api", pdfRoutes);
 
 // Start the server
 const PORT = process.env.PORT;
