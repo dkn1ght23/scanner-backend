@@ -7,7 +7,7 @@ services:
       - "8090:8090"
     environment:
       ZAP_JVM_OPTIONS: "-Xmx4G"
-      ZAP_API_KEY: "t3tgnnoanmg1je2o1pcr8a2au5"  # Replace with your key
+      ZAP_API_KEY: "t3tgnnoanmg1je2o1pcr8a2au5"
     volumes:
       - zap-data:/home/zap/.ZAP
     command: [
@@ -27,9 +27,13 @@ services:
     build: .
     ports:
       - "5000:5000"
+    volumes:
+      - .:/usr/src/app  # Mount current directory to container's working directory
+    working_dir: /usr/src/app  # Ensure container uses this directory
     environment:
       ZAP_API_URL: "http://zap:8080"
       ZAP_API_KEY: "t3tgnnoanmg1je2o1pcr8a2au5"
+    command: npm start  # Or whatever starts your server
     depends_on:
       zap:
         condition: service_healthy

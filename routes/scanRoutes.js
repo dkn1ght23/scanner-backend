@@ -59,8 +59,7 @@ router.post("/scan", async (req, res) => {
       params: { baseurl: url, apikey: process.env.ZAP_API_KEY },
       retry: 3,
     });
-
-    console.log(alertsResponse.data.alerts,'alertsResponse.data.alerts')
+    
 
     res.json({ vulnerabilities: alertsResponse.data.alerts });
   } catch (error) {

@@ -22,39 +22,42 @@ router.post("/upload-report", async (req, res) => {
 
   try {
     const html = generateReportHTML(alerts);
-    const pdfBuffer = await createPDFBufferFromHTML(html);
+    const pdfBuffer = await createPDFBufferFromHTML(html).catch((error) => {
+      console.error("PDF generation error:", error);
+      throw new Error("Failed to generate PDF: " + error.message);
+    });
 
-    return new Promise((resolve, reject) => {
+    const result = await new Promise((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
         {
           resource_type: "raw",
           folder: "scan-reports",
           public_id: `report-${Date.now()}`,
           overwrite: false,
-          format: "pdf", // Explicitly set format to PDF
+          format: "pdf",
         },
         (error, result) => {
           if (error) {
             console.error("Cloudinary upload error:", error);
-            reject(res.status(500).json({ error: "Failed to upload PDF" }));
+            reject(error);
           } else {
-            resolve(
-              res.json({
-                url: result.secure_url,
-                pdf_url: result.secure_url.replace(/\.\w+$/, ".pdf"), // Ensure .pdf extension
-              })
-            );
+            resolve(result);
           }
         }
       );
 
       streamifier.createReadStream(pdfBuffer).pipe(uploadStream);
     });
+
+    res.json({
+      url: result.secure_url,
+      pdf_url: result.secure_url.replace(/\.\w+$/, ".pdf"),
+    });
   } catch (error) {
-    console.error("PDF generation or upload error:", error);
+    console.error("Error in upload-report:", error);
     res.status(500).json({
-      error: "Something went wrong",
-      details: error.message,
+      error: error.message || "Something went wrong",
+      details: process.env.NODE_ENV === "development" ? error.stack : undefined,
     });
   }
 });
