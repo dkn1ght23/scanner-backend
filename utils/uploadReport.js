@@ -1,28 +1,24 @@
-const express = require("express");
-const router = express.Router();
 const streamifier = require("streamifier");
 const { generateReportHTML } = require("../utils/htmlReport");
 const { createPDFBufferFromHTML } = require("../utils/createPDFBufferFromHTML");
 const cloudinary = require("cloudinary").v2;
 require("dotenv").config();
 
-// Cloudinary config
+// Configure Cloudinary
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-router.post("/upload-report", async (req, res) => {
-  const { alerts } = req.body;
-
+async function uploadReport(alerts) {
   if (!alerts || !Array.isArray(alerts)) {
-    return res.status(400).json({ error: "Invalid alerts format" });
+    throw new Error("Invalid alerts format");
   }
 
   try {
     const html = generateReportHTML(alerts);
-    console.log("hamaisi");
+
     const pdfBuffer = await createPDFBufferFromHTML(html).catch((error) => {
       console.error("PDF generation error:", error);
       throw new Error("Failed to generate PDF: " + error.message);
@@ -40,27 +36,23 @@ router.post("/upload-report", async (req, res) => {
         (error, result) => {
           if (error) {
             console.error("Cloudinary upload error:", error);
-            reject(error);
-          } else {
-            resolve(result);
+            return reject(error);
           }
+          resolve(result);
         }
       );
 
       streamifier.createReadStream(pdfBuffer).pipe(uploadStream);
     });
 
-    res.json({
+    return {
       url: result.secure_url,
       pdf_url: result.secure_url.replace(/\.\w+$/, ".pdf"),
-    });
+    };
   } catch (error) {
-    console.error("Error in upload-report:", error);
-    res.status(500).json({
-      error: error.message || "Something went wrong",
-      details: process.env.NODE_ENV === "development" ? error.stack : undefined,
-    });
+    console.error("uploadReport error:", error);
+    throw error;
   }
-});
+}
 
-module.exports = router;
+module.exports = { uploadReport };

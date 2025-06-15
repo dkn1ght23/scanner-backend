@@ -33,6 +33,8 @@ services:
     environment:
       ZAP_API_URL: "http://zap:8080"
       ZAP_API_KEY: "t3tgnnoanmg1je2o1pcr8a2au5"
+      # Add these for Puppeteer
+      PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
     command: npm start  # Or whatever starts your server
     depends_on:
       zap:
