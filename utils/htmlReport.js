@@ -16,7 +16,7 @@ function generateReportHTML(alerts) {
     <!DOCTYPE html>
     <html>
       <head>
-        <title>Security Report Inngest</title>
+        <title>Security Report</title>
         <meta charset="UTF-8">
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; }

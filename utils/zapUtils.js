@@ -1,7 +1,7 @@
-const zapAxios = require("../config/zapAxios");
+import zapAxios from "../config/zapAxios.js";
 
 // Check if ZAP is running
-async function checkZapStatus() {
+export async function checkZapStatus() {
   try {
     const response = await zapAxios.get("/JSON/core/view/version", {
       params: {
@@ -21,7 +21,7 @@ async function checkZapStatus() {
 }
 
 // Wait for scan completion
-async function waitForScanCompletion(scanId, scanType = "ascan") {
+export async function waitForScanCompletion(scanId, scanType = "ascan") {
   let status = 0;
   let retries = 0;
   const maxRetries = 5;
@@ -54,5 +54,3 @@ async function waitForScanCompletion(scanId, scanType = "ascan") {
     }
   } while (status < 100);
 }
-
-module.exports = { checkZapStatus, waitForScanCompletion };

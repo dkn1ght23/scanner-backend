@@ -1,4 +1,4 @@
-const axios = require("axios");
+import axios from "axios";
 
 const zapAxios = axios.create({
   baseURL: process.env.ZAP_API_URL,
@@ -32,4 +32,4 @@ zapAxios.interceptors.response.use(null, async (error) => {
   return zapAxios(config);
 });
 
-module.exports = zapAxios;
+export default zapAxios;

@@ -1,0 +1,31 @@
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:14:04 AM"}
+{"level":"\u001b[31merror\u001b[39m","message":"ReferenceError","timestamp":"2025-08-28 03:15:09 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"500\",\"responseTime\":\"171.499 ms\"}","timestamp":"2025-08-28 03:15:09 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:15:19 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:15:24 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:16:51 AM"}
+{"level":"\u001b[31merror\u001b[39m","message":"Error","timestamp":"2025-08-28 03:16:57 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"500\",\"responseTime\":\"21.172 ms\"}","timestamp":"2025-08-28 03:16:57 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:17:44 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:17:46 AM"}
+{"level":"\u001b[31merror\u001b[39m","message":"Error","timestamp":"2025-08-28 03:17:51 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"500\",\"responseTime\":\"18.462 ms\"}","timestamp":"2025-08-28 03:17:51 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:18:20 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:18:22 AM"}
+{"level":"\u001b[31merror\u001b[39m","message":"Error","timestamp":"2025-08-28 03:18:26 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"500\",\"responseTime\":\"19.223 ms\"}","timestamp":"2025-08-28 03:18:26 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:19:37 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:19:38 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:19:46 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:19:47 AM"}
+{"level":"\u001b[31merror\u001b[39m","message":"Error","timestamp":"2025-08-28 03:19:51 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"400\",\"responseTime\":\"16.743 ms\"}","timestamp":"2025-08-28 03:19:51 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:20:11 AM"}
+{"level":"\u001b[31merror\u001b[39m","message":"Error","timestamp":"2025-08-28 03:20:23 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"400\",\"responseTime\":\"18.797 ms\"}","timestamp":"2025-08-28 03:20:23 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 03:20:51 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"500\",\"responseTime\":\"18.996 ms\"}","timestamp":"2025-08-28 03:20:53 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 07:23:55 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"500\",\"responseTime\":\"2436.028 ms\"}","timestamp":"2025-08-28 07:25:46 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 07:32:14 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"200\",\"responseTime\":\"1659961.081 ms\"}","timestamp":"2025-08-28 08:01:22 AM"}
