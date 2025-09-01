@@ -29,3 +29,4 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"500\",\"responseTime\":\"2436.028 ms\"}","timestamp":"2025-08-28 07:25:46 AM"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-28 07:32:14 AM"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/scan\",\"status\":\"200\",\"responseTime\":\"1659961.081 ms\"}","timestamp":"2025-08-28 08:01:22 AM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-08-31 11:48:38 PM"}

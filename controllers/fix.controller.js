@@ -1,9 +1,7 @@
 import { ApiError } from "../errors/ApiError.js";
 import { fixService } from "../services/fix.service.js";
 import { ApiResponse } from "../utils/ApiResonse.js";
-
-const express = require("express");
-const router = express.Router();
+import { asyncHandler } from "../utils/asyncHandler.js";
 
 export const fixContoller = asyncHandler(async (req, res) => {
   const { alert } = req.body;
