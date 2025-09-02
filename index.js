@@ -5,6 +5,7 @@ import { registerApplicationRoutes } from "./routes/index.js";
 import { logger } from "./logger.js";
 import { loggerMiddleware } from "./middlewares/logger.middleware.js";
 import { errorHandler } from "./middlewares/error.middlware.js";
+import { connectDB } from "./db/index.js";
 
 dotenv.config({ silent: true });
 
@@ -46,6 +47,7 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 // app.use("/api", fixRoutes);
 // app.use("/api", rateRoutes);
 // app.use("/api", pdfRoutes);
+connectDB();
 
 app.get("/", (req, res) => {
   res.send("The Server is running...");
