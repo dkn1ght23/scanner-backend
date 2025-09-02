@@ -46,3 +46,5 @@
 {"level":"\u001b[31merror\u001b[39m","message":"Error connecting to the database","timestamp":"2025-09-01 08:52:02 PM"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-09-01 08:52:38 PM"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Database connected successfully","timestamp":"2025-09-01 08:52:41 PM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-09-01 08:52:50 PM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Database connected successfully","timestamp":"2025-09-01 08:52:53 PM"}
