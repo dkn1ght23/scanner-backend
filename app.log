@@ -126,3 +126,6 @@
 {"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-09-02 10:57:21 PM"}
 {"level":"\u001b[32minfo\u001b[39m","message":"Database connected successfully","timestamp":"2025-09-02 10:57:24 PM"}
 {"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/auth/google\",\"status\":\"302\",\"responseTime\":\"7.356 ms\"}","timestamp":"2025-09-02 10:57:34 PM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Server is running on port: 5000","timestamp":"2025-09-02 10:58:13 PM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"Database connected successfully","timestamp":"2025-09-02 10:58:16 PM"}
+{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/auth/google\",\"status\":\"302\",\"responseTime\":\"7.274 ms\"}","timestamp":"2025-09-02 10:58:21 PM"}
