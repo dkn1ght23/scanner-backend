@@ -6,6 +6,12 @@ import { logger } from "./logger.js";
 import { loggerMiddleware } from "./middlewares/logger.middleware.js";
 import { errorHandler } from "./middlewares/error.middlware.js";
 import { connectDB } from "./db/index.js";
+import passport from "passport";
+import session from "express-session";
+import cookieParser from "cookie-parser";
+import csrf from "csurf";
+import helmet from "helmet";
+import "./config/passport.js";
 
 dotenv.config({ silent: true });
 
@@ -21,8 +27,20 @@ app.use(
   })
 );
 
+// Session (needed for passport)
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false }, // set true if HTTPS
+  })
+);
+
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
+
+app.use(helmet());
 
 // const scanRoutes = require("./routes/scanRoutes");
 // const fixRoutes = require("./routes/fixRoutes");
@@ -41,13 +59,15 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 // });
 
 // app.use(limiter);
-
-// Routes
-// app.use("/api", scanRoutes);
-// app.use("/api", fixRoutes);
-// app.use("/api", rateRoutes);
-// app.use("/api", pdfRoutes);
 connectDB();
+
+// Passport init
+app.use(passport.initialize());
+app.use(passport.session());
+
+// CSRF protection
+app.use(cookieParser());
+app.use(csrf({ cookie: true }));
 
 app.get("/", (req, res) => {
   res.send("The Server is running...");
