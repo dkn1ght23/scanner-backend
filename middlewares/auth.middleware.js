@@ -6,5 +6,5 @@ export const googleAuthMiddleware = passport.authenticate("google", {
 });
 
 export const googleCallbackAuth = passport.authenticate("google", {
-  failureRedirect: "/login",
+  failureRedirect: "http://localhost:3000/login",
 });
